@@ -11,25 +11,37 @@
             div#id-div{
                 background-color:yellow;
             }
+
             li.my-list{
                 background-color:orange;
+            }
+
+            div#new-div, li.new-list{
+                background-color:cyan;
+            }
+
+            ul.my-kids > li {
+                background-color:greenyellow;
             }
         </style>
     </head>
     <body>
         <header>
-            
-            <h1 class="page-header">CSS Selectors by Sarah Keane</h1>
-            
+        
+        <h1 class="page-header">CSS Selectors by Sarah Keane</h1>
+        
         <nav>
             <ul>
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#child">child</a></li>
+                <li><a href="#descendent">child</a></li>
             </ul>
         </nav> 
     </header>           
         <p>This page demonstrates how CSS selectors work.</p>
+
 <!-- ID Stuff Below -->
         <fieldset>
             <legend><a id="id">id</a></legend>
@@ -45,6 +57,7 @@
             <div id="id-div">Inside my-div</div>
         </fieldset>
 <!----------------------->
+
 <!-- Class Stuff Below -->
         <fieldset>
             <legend><a id="class">class</a></legend>
@@ -56,16 +69,57 @@
     background-color:orange;
 }</code></pre>
 
-
             <p>Here's what it looks like:</p>
             <div>
               <ul>
+                <li class="my-list">I'm in a <b>li</b> with the class <b>my-list</b></li>
                 <li class="my-list">I am not in a list... just kidding, i was <b>li</b>-ing :)</li>
-                <li class="my-list">I am in an unordered list... just kidding, i was <b>li</b>-ing :)</li>
-                <li class="my-list">I am not the best... just kidding, i was <b>li</b>-ing :)</li>
+                <li class="my-list">I am in an ordered list... just kidding, i was <b>li</b>-ing :)</li>
               </ul>
             </div>
         </fieldset>
+<!----------------------->
+
+<!-- Compound Stuff Below -->
+        <fieldset>
+            <legend><a id="compound">compound</a></legend>
+            <p>compound selectors target multiple selectors, which are seperated by commas.</p>
+            <p>This lets us apply the same rules to several selectors.</p>
+            <pre><code>div#new-div, li.new-list{
+    background-color:blue;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+
+            <div id="new-div">I'm inside a <b>div</b>, and I have an <b>id</b> of <b>new-div</b></div>
+
+            <div>
+              <ul>
+                <li class="new-list">I'm a <b>li</b>, and I have a class called <b>new-list</b></li>
+                <li class="new-list">I'm styled alongside <b>new-div</b> with a compound selector!</li>
+              </ul>
+            </div>
+        </fieldset>
+<!----------------------->
+
+<!-- Child Stuff Below -->
+        <fieldset>
+            <legend><a id="child">child</a></legend>
+            <p>A child selector allows us to access the next immediate elements inside the current element.</p>
+            <p>This lets us apply the same rules to several selectors.</p>
+            <pre><code>ul.my-kids > li {
+    background-color:cyan;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+
+            <div>
+              <ul class="my-kids">
+                <li>I'm in an <b>li</b> inside a <b>ul</b> with a class of <b>my-kids</b></li>
+              </ul>
+            </div>
+        </fieldset>
+<!----------------------->
 
         <footer class="page-footer">
             <p><small>&copy; 2023 by 
