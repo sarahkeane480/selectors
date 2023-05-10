@@ -23,6 +23,18 @@
             ul.my-kids > li {
                 background-color:greenyellow;
             }
+
+            div.grandkids li {
+                background-color:orangered;
+            }
+
+            .add-border{
+                border: 2px solid slateblue;
+            }
+
+            .add-background{
+                background-color: violet;
+            }
         </style>
     </head>
     <body>
@@ -37,6 +49,7 @@
                 <li><a href="#compound">compound</a></li>
                 <li><a href="#child">child</a></li>
                 <li><a href="#descendent">descendent</a></li>
+                <li><a href="#multiple">multiple classes</a></li>
             </ul>
         </nav> 
     </header>           
@@ -83,10 +96,10 @@
 <!-- Compound Stuff Below -->
         <fieldset>
             <legend><a id="compound">compound</a></legend>
-            <p>compound selectors target multiple selectors, which are seperated by commas.</p>
+            <p>compound selectors target multiple selectors, which are separated by commas.</p>
             <p>This lets us apply the same rules to several selectors.</p>
             <pre><code>div#new-div, li.new-list{
-    background-color:blue;
+    background-color:cyan;
 }</code></pre>
 
             <p>Here's what it looks like:</p>
@@ -108,7 +121,7 @@
             <p>A child selector allows us to access the next immediate elements inside the current element.</p>
             <p>This lets us apply the same rules to several selectors.</p>
             <pre><code>ul.my-kids > li {
-    background-color:cyan;
+    background-color:greenyellow;
 }</code></pre>
 
             <p>Here's what it looks like:</p>
@@ -116,6 +129,51 @@
             <div>
               <ul class="my-kids">
                 <li>I'm in an <b>li</b> inside a <b>ul</b> with a class of <b>my-kids</b></li>
+                <li>I'm in an <b>li</b> inside a <b>ul</b> with a class of <b>my-kids</b></li>
+              </ul>
+            </div>
+        </fieldset>
+<!----------------------->
+
+<!-- Descendent Stuff Below -->
+        <fieldset>
+            <legend><a id="descendent">descendent</a></legend>
+            <p>The descendant selector allows us to hook to an element at any depth inside the current element.</p>
+            <p>This lets us apply the same rule at any depth within the current element.</p>
+            <pre><code>div.grandkids li {
+    background-color:orangered;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+
+            <div class="grandkids">
+              <ul>
+                <li>I'm in an <b>li</b> inside a <b>div</b> with a class of <b>grandkids</b></li>
+                <li>I'm in an <b>li</b> inside a <b>div</b> with a class of <b>grandkids</b></li>
+              </ul>
+            </div>
+        </fieldset>
+<!----------------------->
+
+<!-- Class Stuff Below -->
+        <fieldset>
+            <legend><a id="multiple">multiple classes</a></legend>
+            <p>We can apply multiple classes to an element by placing class names separated by spaces in the class attribute.</p>
+            <p>Here's how we hook multiple classes to an element:</p>
+            <pre><code>class="add-border add-background"</code></pre>
+            <p>Here's how the CSS is applied to the element:</p>
+            <pre><code>.add-border{
+    border: 2px solid violet;
+}
+
+.add-background{
+    background-color: yellow;
+}</code></pre>
+
+            <p>Here's what it looks like:</p>
+            <div>
+              <ul>
+                <li class="add-border add-background">I'm in an <b>li</b> that has 2 classes, <b>add-border</b>, and <b>add-background</b></li>
               </ul>
             </div>
         </fieldset>
